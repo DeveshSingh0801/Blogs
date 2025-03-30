@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog System</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <header>
+        <h1>Blog System</h1>
+    </header>
+
+    <main>
+        <section id="blogs">
+            <h2>Latest Blogs</h2>
+            <div id="blog-list">
+                <!-- Blogs will be loaded here -->
+            </div>
+        </section>
+    </main>
+
+    <script>
+        // Fetch and display blogs
+        fetch('https://jsonplaceholder.typicode.com/posts')
+            .then(response => response.json())
+            .then(data => {
+                const blogList = document.getElementById('blog-list');
+                data.slice(0, 5).forEach(blog => {
+                    const blogDiv = document.createElement('div');
+                    blogDiv.classList.add('blog');
+                    blogDiv.innerHTML = `
+                        <h3>${blog.title}</h3>
+                        <p>${blog.body.substring(0, 100)}...</p>
+                        <a href="#">Read More</a>
+                    `;
+                    blogList.appendChild(blogDiv);
+                });
+            })
+            .catch(error => console.error('Error fetching blogs:', error));
+    </script>
+
+</body>
+</html>
