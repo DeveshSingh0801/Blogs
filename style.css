@@ -1,0 +1,62 @@
+/* Reset Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* Header */
+header {
+    background: #333;
+    color: white;
+    text-align: center;
+    padding: 15px;
+}
+
+/* Main Content */
+main {
+    padding: 20px;
+    max-width: 800px;
+    margin: auto;
+}
+
+/* Blog Section */
+#blogs h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Blog Posts */
+#blog-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.blog {
+    border: 1px solid #ddd;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.blog h3 {
+    margin-bottom: 10px;
+}
+
+.blog p {
+    color: #666;
+}
+
+.blog a {
+    display: inline-block;
+    margin-top: 10px;
+    color: blue;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.blog a:hover {
+    text-decoration: underline;
+}
